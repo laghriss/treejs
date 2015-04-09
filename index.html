@@ -2,9 +2,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Tree Js</title>
+    <script charset="utf-8" src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
-
+    <ul id="tree">
+      <li> <span>+</span> parent
+        <ul>
+          <li>child</li>
+          <li>child</li>
+          <li><span>+</span>child
+            <ul>
+              <li>child</li>
+              <li>child</li>
+              <li>child</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <script charset="utf-8">
+      jQuery(function($){
+          $('#tree li span').on('click', function(){
+            $(this).parent().children().toggle();
+            $(this).show();
+          })
+      })
+    </script>
   </body>
 </html>
